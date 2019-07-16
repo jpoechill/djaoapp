@@ -29,7 +29,7 @@ if os.getenv('DEBUG'):
     # Enable override on command line.
     DEBUG = True if int(os.getenv('DEBUG')) > 0 else False
 
-API_DEBUG = DEBUG
+API_DEBUG = True
 
 if getattr(sys.modules[__name__], 'RULES_APP_MODEL', None):
     RULES_APPS = (RULES_APP_MODEL.split('.')[0],)
@@ -83,6 +83,7 @@ INSTALLED_APPS = ENV_INSTALLED_APPS + (
 #    'haystack', disabled until we actively use text searches on the site.
     'saas',  # Because we want `djaodjin-resources.js` picked up from here.
     'signup',
+    'extended_templates',
     'social_django',
     'pages',
     'multitier',
